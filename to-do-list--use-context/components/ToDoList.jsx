@@ -9,25 +9,20 @@ const ToDoList = () => {
     const [inputUserData, setInputUserData] = useState("")
 
     const handleAddTaskList = ()=>{
+        // setTaskList([...taskList,inputUserData]) //otra forma que omite el structuredClone
         const newTaskList = structuredClone(taskList)
         newTaskList.push(inputUserData);
         setTaskList(newTaskList)
         setInputUserData("")
-        console.log(newTaskList)
     }
-
-    const showTaskList = taskList.map((task)=>{
-        return(
-            <ToDoItem task={task}></ToDoItem>
-        )
-    })
 
 
   return (
     <>
     <input type='text' onChange={(e)=>{setInputUserData(e.target.value)}} value={inputUserData}></input>
     <button onClick={()=>{handleAddTaskList()}}>Añadir tarea</button>
-    {showTaskList}
+    <ToDoItem taskList={taskList}></ToDoItem>
+  
     </>
   )
 }
