@@ -1,8 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { ToDoListContext } from '@/context/ContextApp'
 
-const DeleteButton = () => {
+const DeleteButton = ({task}) => {
+
+    const {taskList, setTaskList} = useContext(ToDoListContext)
+
+    const handleDeleteTask = ()=>{
+        const newArrTaskList = taskList.filter((elementoActual)=>{return(elementoActual !== task)})
+        setTaskList(newArrTaskList)
+
+    }
+   
   return (
-    <div>DeleteButton</div>
+    <button onClick={()=> handleDeleteTask()}> Borrar tarea</button>
   )
 }
 

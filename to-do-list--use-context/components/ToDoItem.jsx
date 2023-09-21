@@ -1,17 +1,18 @@
 import React from 'react'
+import DeleteButton from './DeleteButton'
 
 const ToDoItem = ({taskList}) => {
 
-  console.log("tareas",taskList)
 
   const showTaskList = taskList.map((task)=>{
     return(
       <ul>
-        <li>{task}</li>
+        <li>{task}
+        <DeleteButton task={task}></DeleteButton>
+        </li>
       </ul>
     )
 })
-
 
   return (
     <> {showTaskList}</>
