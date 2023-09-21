@@ -29,7 +29,6 @@ const ToDoList = () => {
     <>
     <input type='text' onChange={(e)=>{setInputUserData(e.target.value)}} value={inputUserData}></input>
     <button onClick={()=>{handleAddTaskList()}}>Añadir tarea</button>
-    <button onClick={()=>{handleAddTaskList()}}>eee</button>
     {showTaskList}
     <ToDoItem></ToDoItem>
     </>
