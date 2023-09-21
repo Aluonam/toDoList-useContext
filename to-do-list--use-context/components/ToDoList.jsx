@@ -18,9 +18,7 @@ const ToDoList = () => {
 
     const showTaskList = taskList.map((task)=>{
         return(
-            <ul>
-                <li>{task}</li>
-            </ul>
+            <ToDoItem task={task}></ToDoItem>
         )
     })
 
@@ -30,7 +28,6 @@ const ToDoList = () => {
     <input type='text' onChange={(e)=>{setInputUserData(e.target.value)}} value={inputUserData}></input>
     <button onClick={()=>{handleAddTaskList()}}>Añadir tarea</button>
     {showTaskList}
-    <ToDoItem></ToDoItem>
     </>
   )
 }
